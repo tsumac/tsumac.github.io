@@ -1,10 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
+  <link rel="manifest" href="./manifest.json">
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator
+        .serviceWorker
+        .register('./service-worker.js')
+        .then(function() {
+          console.log('Service Worker Registered');
+        });
+   }
+  </script>
+  <style>
+    .image {
+      width: 80%;
+      margin: auto;
+      display: block;
+    }
+  </style>
   <title>tsumac.github.io</title>
 </head>
 <body>
-  hello, world!
+  <img class="image" src="./icon-256.png" alt="sample-image">
 </body>
 </html>
